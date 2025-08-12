@@ -1,0 +1,93 @@
+/* ===== Palette: softer, watercolor-y ===== */
+:root{
+  --ink:#1f2937;              /* slightly softer than pure #111 */
+  --muted:#6b7280;
+  --paper:#FAF7F2;            /* warmer paper */
+  /* watercolor washes (muted, low-sat) */
+  --wash-rose:#D6A6B1;
+  --wash-lilac:#C9C6E0;
+  --wash-sky:#A9CBE3;
+  --pad:clamp(16px, 2vw, 28px);
+  --header-h:76px;            /* ↓ was 84 — a bit tighter */
+  --accent-grad: linear-gradient(90deg,var(--wash-rose),var(--wash-lilac),var(--wash-sky));
+}
+
+/* one-page layout, no scroll */
+html, body { height: 100vh; margin:0; overflow:hidden; }
+body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Quicksand, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.container{ max-width:1200px; margin:0 auto; padding:0 var(--pad); }
+
+/* Header: seamless with page (no bottom line) */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background: var(--paper);
+  border-bottom:none;
+  backdrop-filter:none;
+}
+/* Full-bleed header container so logo can sit hard-left */
+.site-header .container{
+  max-width:100%;
+  margin:0;
+  padding-left: clamp(8px, 1.5vw, 16px);
+  padding-right: clamp(16px, 2.4vw, 32px); /* ↑ a touch more breathing room */
+}
+
+.nav{ display:flex; align-items:center; gap:24px; min-height: var(--header-h); }
+.menu-toggle{ display:none; }
+
+.logo{
+  display:flex; align-items:center; text-decoration:none; color:var(--ink);
+  margin-right:auto; /* pushes nav to the right */
+}
+.logo img{ height:96px; width:auto; display:block; } /* ↓ was 130px */
+
+/* Primary nav (desktop baseline) */
+.primary{ display:flex; gap:24px; align-items:center } /* ↓ gap */
+.primary a{
+  position:relative; color:var(--ink); text-decoration:none; font-weight:600; opacity:.95; padding:8px 0;
+  letter-spacing:.01em; /* tiny refinement */
+}
+.primary a:hover{ opacity:1 }
+
+/* Underline animation — EXCLUDE the CTA */
+.primary a:not(.cta)::after{
+  content:""; position:absolute; left:0; bottom:-8px; height:2px; width:0%; /* slimmer & lower */
+  background: var(--accent-grad);
+  transition: width .25s ease;
+}
+.primary a:not(.cta):hover::after{ width:100% }
+.primary a.active:not(.cta)::after{ width:100% }
+
+/* CTA — gradient by default, different hover effect */
+.primary .cta{
+  padding:.55rem 1rem;                 /* a hair wider */
+  border-radius:12px;                   /* slightly rounder */
+  border:0;
+  background: var(--accent-grad);
+  color:#0d1320;
+  background-size: 200% 200%;
+  transition:
+    background-position .35s ease,
+    transform .15s ease,
+    box-shadow .2s ease,
+    filter .2s ease;
+  box-shadow:
+    0 0 0 1px rgba(17,24,39,.05) inset,
+    0 8px 22px rgba(16,24,40,.08);
+}
+.primary .cta:hover{
+  background-position: 100% 0;        /* gentle sweep */
+  transform: translateY(-1px) scale(1.01);
+  filter: saturate(1.03) brightness(1.02);
+  box-shadow:
+    0 0 0 1px rgba(17,24,39,.08) inset,
+    0 10px 24px rgba(16,24,40,.10);
+}
+.primary .cta:active{
+  transform: translateY(0);
+  filte
