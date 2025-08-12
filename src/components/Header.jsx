@@ -40,9 +40,9 @@ export default function Header() {
           aria-label="Primary"
         >
           <NavLink to="/lab" className={navCls} onClick={close}>Our Lab</NavLink>
+          <NavLink to="/expertise" className={navCls} onClick={close}>Our Expertise</NavLink>
           <NavLink to="/craft" className={navCls} onClick={close}>Our Craft</NavLink>
           <NavLink to="/domains" className={navCls} onClick={close}>Our Domains</NavLink>
-          <NavLink to="/experience" className={navCls} onClick={close}>Our Experience</NavLink>
           <NavLink to="/connect" className={ctaCls} onClick={close}>Connect</NavLink>
         </nav>
       </div>

@@ -8,13 +8,13 @@ export default function Home() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <h1 id="home-title">
-            <span className="break">We bring</span>
-            <span className="break">magic.</span>
+            <span className="break">We do</span>
+            <span className="break">alchemy.</span>
             <span className="break">You get gold.</span>
           </h1>
 
           <p className="lede">
-            3x your profits. 10x your valuation.
+            Are you ready to 3x your profits and 10x your value with technology alchemy?
           </p>
 
           <div className="hero-cta">

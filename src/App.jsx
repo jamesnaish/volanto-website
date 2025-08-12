@@ -6,7 +6,7 @@ const Home       = lazy(() => import('./pages/Home.jsx'));
 const Lab        = lazy(() => import('./pages/Lab.jsx'));
 const Craft      = lazy(() => import('./pages/Craft.jsx'));
 const Domains    = lazy(() => import('./pages/Domains.jsx'));
-const Experience = lazy(() => import('./pages/Experience.jsx'));
+const Expertise = lazy(() => import('./pages/Expertise.jsx'));
 const Connect    = lazy(() => import('./pages/Connect.jsx'));
 
 export default function App() {
@@ -15,9 +15,9 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="lab" element={<Lab />} />
+        <Route path="expertise" element={<Expertise />} />
         <Route path="craft" element={<Craft />} />
         <Route path="domains" element={<Domains />} />
-        <Route path="experience" element={<Experience />} />
         <Route path="connect" element={<Connect />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
