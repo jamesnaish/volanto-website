@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header.jsx';
 
@@ -7,7 +7,9 @@ export default function Layout() {
     <>
       <Header />
       <main className="viewport-body">
-        <Outlet /> {/* the active page renders here */}
+        <Suspense fallback={<div className="page-loading">Loading…</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );

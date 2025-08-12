@@ -20,6 +20,8 @@ body{
   font-family: Quicksand, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
+.page-loading { font-weight:600; opacity:.65; }
+
 .container{ max-width:1200px; margin:0 auto; padding:0 var(--pad); }
 
 /* Header: seamless with page (no bottom line) */
