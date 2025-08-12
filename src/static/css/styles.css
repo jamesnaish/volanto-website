@@ -20,8 +20,6 @@ body{
   font-family: Quicksand, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
-.page-loading { font-weight:600; opacity:.65; }
-
 .container{ max-width:1200px; margin:0 auto; padding:0 var(--pad); }
 
 /* Header: seamless with page (no bottom line) */
@@ -92,4 +90,133 @@ body{
 }
 .primary .cta:active{
   transform: translateY(0);
-  filte
+  filter: brightness(0.99);
+}
+
+/* Viewport body: fill remaining height, no page scroll */
+.viewport-body{
+  height: calc(100vh - var(--header-h));
+  min-height: calc(100vh - var(--header-h));
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+
+/* ───────────────────────────────────────────── */
+/* Responsive: collapse nav under 980px width   */
+/* ───────────────────────────────────────────── */
+@media (max-width: 980px){
+  :root { --header-h: 72px; }
+  .logo img{ height:64px }
+  .nav{ min-height: var(--header-h) }
+
+  .menu-toggle{
+    display:flex;
+    width:44px; height:44px; border-radius:10px;
+    border:1px solid #e5e7eb; background: rgba(255,255,255,.7);
+    cursor:pointer; align-items:center; justify-content:center;
+  }
+  .menu-toggle .bar{ width:22px; height:2px; background:var(--ink); margin:3px auto; transition:.25s ease; display:block; }
+  .menu-toggle.is-open .bar:nth-child(1){ transform:translateY(5px) rotate(45deg) }
+  .menu-toggle.is-open .bar:nth-child(2){ opacity:0 }
+  .menu-toggle.is-open .bar:nth-child(3){ transform:translateY(-5px) rotate(-45deg) }
+
+  .primary{ display:none }
+  .primary.is-open{
+    display:flex; flex-direction:column; gap:14px;
+    position:absolute; left:0; right:0; top:100%;
+    padding:14px var(--pad) 18px;
+    background: var(--paper);
+    border-bottom:none; backdrop-filter:none;
+    align-items:center;
+  }
+  .primary a{ padding:6px 0; font-size:16px }
+  .primary .cta{ align-self:center }
+}
+
+/* ---------- Home hero ---------- */
+.home-hero{
+  width:100%;
+  height:100%;                     /* fills .viewport-body */
+  display:flex; align-items:center;
+}
+
+.hero-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;   /* copy left, art right */
+  align-items:center;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.hero-copy .break{ display:block; }
+
+.home-hero h1{
+  margin:0 0 18px 0;
+  font-weight: 700;
+  letter-spacing:-0.02em;
+  line-height:.95;
+  font-size: clamp(40px, 8vw, 96px);
+  color: var(--ink);
+}
+
+.home-hero .lede{
+  margin: 0 0 26px 0;
+  max-width: 42ch;
+  font-size: clamp(16px, 2.1vw, 22px);
+  color: var(--muted);
+}
+
+.hero-cta .btn{
+  text-decoration:none;
+}
+
+/* Button to match your brand gradient */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.8rem 1.2rem;
+  border-radius:12px; font-weight:600;
+}
+.btn-gradient{
+  background: var(--accent-grad);
+  color:#0d1320;
+  background-size:200% 200%;
+  box-shadow:
+    0 0 0 1px rgba(17,24,39,.05) inset,
+    0 8px 22px rgba(16,24,40,.08);
+  transition: background-position .35s ease, transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn-gradient:hover{
+  background-position: 100% 0;
+  transform: translateY(-1px) scale(1.01);
+  filter: saturate(1.03) brightness(1.02);
+  box-shadow:
+    0 0 0 1px rgba(17,24,39,.08) inset,
+    0 10px 24px rgba(16,24,40,.10);
+}
+
+.hero-art{
+  display:flex; justify-content:flex-end; align-items:flex-end;
+}
+.hero-art img{
+  display:block;
+  max-width: min(640px, 45vw);
+  max-height: 75vh;                 /* keeps it within the viewport */
+  height:auto; width:100%;
+  pointer-events:none; user-select:none;
+  filter: saturate(.85) contrast(1.05) opacity(.92);
+}
+
+/* Responsive: stack and center */
+@media (max-width: 980px){
+  .hero-grid{ grid-template-columns: 1fr; text-align:center; }
+  .hero-copy{ margin-inline:auto; }
+  .hero-copy .break{ display:inline; }      /* allow natural wrapping on mobile */
+  .home-hero .lede{ margin-left:auto; margin-right:auto; }
+  .hero-art img{ max-width: 76vw; margin-inline:auto; }
+}
+
+
+/* Optional: slightly wider content on very large screens */
+@media (min-width: 1400px){
+  .container { max-width:1280px; }
+}
