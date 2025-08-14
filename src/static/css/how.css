@@ -1,0 +1,179 @@
+:root{
+  --ink:#111827;
+  --muted:#5A6170;
+
+  /* Brand gradient fallback (uses site tokens if present) */
+  --accent-grad: linear-gradient(90deg,
+    var(--wash-rose, #D6A6B1),
+    var(--wash-lilac, #C9C6E0),
+    var(--wash-sky,  #A9CBE3)
+  );
+}
+
+/* Section shell */
+.how.container{ max-width:1200px; margin:0 auto; padding:clamp(20px,4vw,64px) 28px; color:var(--ink); }
+
+/* Title */
+.how-title{
+  text-align:center;
+  font-size:clamp(32px,6vw,56px);
+  line-height:1.05;
+  margin:0 0 28px;
+  font-weight:800;
+  letter-spacing:-.01em;
+}
+
+/* Two-column grid with a real divider column */
+.how-grid{
+  display:grid;
+  grid-template-columns: minmax(420px,1fr) 2px minmax(520px,46vw);
+  gap:clamp(24px,4vw,56px);
+  align-items:start;
+}
+
+/* Divider (exact spec) */
+.v-divider{
+  align-self:stretch;
+  background: linear-gradient(
+    to bottom,
+    rgba(17,24,39,0),
+    rgba(17,24,39,.12) 12%,
+    rgba(17,24,39,.12) 88%,
+    rgba(17,24,39,0)
+  );
+  border-radius:1px;
+}
+
+/* Keep content away from the divider */
+.how-steps{ padding-right:clamp(12px,2.2vw,28px); }
+.how-right{ padding-left: clamp(12px,2.2vw,28px); }
+
+/* Steps list */
+.how-steps{ display:grid; gap:18px; }
+.how-step{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:16px;
+  row-gap:4px;
+  align-items:center;
+  padding:12px 0;
+  border-top:1px solid rgba(17,24,39,.08);
+}
+.how-step:first-child{ border-top:none; padding-top:0; }
+
+/* Icon-only (no card) */
+.how-ico{
+  width:clamp(68px,8vw,96px);
+  height:clamp(68px,8vw,96px);
+  object-fit:contain;
+  display:block;
+  filter:saturate(.95) contrast(1.02);
+}
+
+/* Chunky gradient number + title */
+.how-step-title{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin:0 0 6px;
+}
+.how-step-num{
+  font-weight:900;
+  font-size:clamp(22px,3.6vw,36px);
+  letter-spacing:.02em;
+  line-height:1;
+  background:var(--accent-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.how-step-blurb{
+  margin:0;
+  color:var(--muted);
+  font-size:clamp(14px,1.8vw,16px);
+  line-height:1.55;
+  max-width:60ch;
+}
+
+/* Right column */
+.how-right{ justify-self:end; max-width:46vw; }
+.how-subhead{ margin:0 0 8px; font-size:clamp(20px,2.6vw,28px); font-weight:800; }
+.how-lead{ margin:0 0 18px; color:var(--muted); max-width:60ch; }
+
+/* Big machine, anchored right */
+.machine-art{
+  width:min(820px,46vw);
+  height:auto;
+  display:block;
+  margin-left:auto; /* push to right edge */
+  filter:drop-shadow(0 10px 24px rgba(0,0,0,.10));
+}
+
+/* Mobile: stack, allow scroll, hide divider */
+@media (max-width:980px){
+  html, body{ height:auto; min-height:100%; overflow:auto; }
+  .how-grid{ grid-template-columns:1fr; gap:24px; }
+  .v-divider{ display:none; }
+  .how-steps{ padding-right:0; }
+  .how-right{ padding-left:0; max-width:100%; justify-self:start; }
+  .machine-art{ width:min(680px,92vw); margin:0; }
+}
+
+/* ─────────────────────────────────────────────
+   HOW WE WORK — alignment / spacing polish
+   (paste below your existing rules)
+   ───────────────────────────────────────────── */
+
+/* Give the two columns a bit more air */
+.how-grid{
+  grid-template-columns: minmax(420px,1fr) 2px minmax(520px,46vw);
+  gap: clamp(32px, 5vw, 72px);
+}
+
+/* Keep the divider buffer on both sides */
+.how-steps{ padding-right: clamp(16px, 2.6vw, 36px); }
+.how-right{  padding-left:  clamp(16px, 2.6vw, 36px); }
+
+/* Make the right column the same width as the art,
+   center the text over it, and stack neatly */
+.how-right{
+  justify-self: end;                 /* stays on the right side of the grid */
+  width: min(820px, 46vw);           /* same horizontal span as the image */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;               /* centers the headings & lead */
+  text-align: center;                /* centers the text lines */
+  gap: clamp(8px, 1.4vh, 14px);      /* tidy internal spacing */
+}
+
+/* Headings and lead length tuned for centered setting */
+.how-subhead{ margin: 0; }
+.how-lead{
+  margin: 0 0 clamp(16px, 2.2vh, 24px);
+  max-width: 50ch;                   /* comfortable line length when centered */
+  color: var(--muted);
+}
+
+/* The image fills the right column; no weird offsets */
+.machine-art{
+  width: 100%;
+  height: auto;
+  margin: 0;                         /* remove the old right-anchoring offset */
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.10));
+}
+
+/* Mobile: still stacked and centered */
+@media (max-width: 980px){
+  .how-grid{ grid-template-columns: 1fr; gap: 24px; }
+  .v-divider{ display: none; }
+  .how-steps{ padding-right: 0; }
+  .how-right{
+    justify-self: start;
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .machine-art{ width: min(680px, 92vw); }
+}

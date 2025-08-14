@@ -42,7 +42,8 @@ export default function Header() {
           <NavLink to="/about" className={navCls} onClick={close}>Who We Are</NavLink>
           <NavLink to="/what" className={navCls} onClick={close}>What We Do</NavLink>
           <NavLink to="/who" className={navCls} onClick={close}>Who We're For</NavLink>
-          <NavLink to="/why" className={navCls} onClick={close}>Why Volanto?</NavLink>
+          <NavLink to="/why" className={navCls} onClick={close}>Why We're Different</NavLink>
+          <NavLink to="/how" className={navCls} onClick={close}>How We Work</NavLink>
           <NavLink to="/connect" className={ctaCls} onClick={close}>Connect</NavLink>
         </nav>
       </div>

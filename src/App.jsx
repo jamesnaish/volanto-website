@@ -6,6 +6,7 @@ const Home       = lazy(() => import('./pages/Home.jsx'));
 const About        = lazy(() => import('./pages/About.jsx'));
 const What      = lazy(() => import('./pages/What.jsx'));
 const Who    = lazy(() => import('./pages/Who.jsx'));
+const How    = lazy(() => import('./pages/How.jsx'));
 const Why = lazy(() => import('./pages/Why.jsx'));
 const Contact    = lazy(() => import('./pages/Contact.jsx'));
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="who" element={<Who />} />
         <Route path="about" element={<About />} />
         <Route path="why" element={<Why />} />
+        <Route path="how" element={<How />} />
         <Route path="contact" element={<Contact />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
