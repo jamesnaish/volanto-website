@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layout/Layout.jsx';
 
 const Home       = lazy(() => import('./pages/Home.jsx'));
-const Lab        = lazy(() => import('./pages/Lab.jsx'));
+const About        = lazy(() => import('./pages/About.jsx'));
 const Craft      = lazy(() => import('./pages/Craft.jsx'));
 const Domains    = lazy(() => import('./pages/Domains.jsx'));
 const Expertise = lazy(() => import('./pages/Expertise.jsx'));
@@ -14,7 +14,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="lab" element={<Lab />} />
+        <Route path="about" element={<About />} />
         <Route path="expertise" element={<Expertise />} />
         <Route path="craft" element={<Craft />} />
         <Route path="domains" element={<Domains />} />

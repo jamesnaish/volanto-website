@@ -1,3 +1,5 @@
-export default function Expertise() {
-  return <h1>Our Expertise</h1>;
+export default function Home() {
+  return (
+    <h1>Our Home</h1>
+  );
 }

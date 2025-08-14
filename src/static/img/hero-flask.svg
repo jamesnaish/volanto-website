@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Paper tone -->
+    <radialGradient id="paper" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FAF7F2" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Liquid gold gradient -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD46C"/>
+      <stop offset="50%" stop-color="#FFC347"/>
+      <stop offset="100%" stop-color="#B38A38"/>
+    </linearGradient>
+
+    <!-- Purple base gradient -->
+    <linearGradient id="plum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7C5BA9"/>
+      <stop offset="100%" stop-color="#4F3B79"/>
+    </linearGradient>
+
+    <!-- Glass highlight -->
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Soft shadow -->
+    <radialGradient id="shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Smoke gradient -->
+    <linearGradient id="smoke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7D67B"/>
+      <stop offset="100%" stop-color="#E3B23C"/>
+    </linearGradient>
+
+    <!-- Watercolor blur -->
+    <filter id="wash" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.9 0"/>
+    </filter>
+
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Paper background -->
+  <rect width="1200" height="1200" fill="url(#paper)"/>
+
+  <!-- Table shadow -->
+  <ellipse cx="740" cy="940" rx="210" ry="60" fill="url(#shadow)" filter="url(#soft)"/>
+
+  <!-- Flask body -->
+  <g transform="translate(600, 680)">
+    <!-- Glass outline -->
+    <path d="M-120,-440 h240 v70 c0,30 -12,58 -33,80 l-33,35 v220 c0,40 12,80 35,113 7,10 11,22 11,34 0,80 -70,145 -155,145 -85,0 -155,-65 -155,-145 0,-12 4,-24 11,-34 23,-33 35,-73 35,-113 v-220 l-33,-35 c-21,-22 -33,-50 -33,-80 v-70 z"
+          fill="white" opacity="0.8" filter="url(#soft)"/>
+    <!-- Liquid -->
+    <path d="M-145,110 c70,-40 220,-40 290,0 v60 c0,85 -75,155 -170,155 -95,0 -170,-70 -170,-155z" fill="url(#plum)" opacity="0.75" filter="url(#soft)"/>
+    <path d="M-140,20 c65,-30 210,-30 280,0 v100 c0,80 -75,145 -170,145 -95,0 -170,-65 -170,-145z" fill="url(#gold)" opacity="0.92" filter="url(#soft)"/>
+
+    <!-- Glass highlight stroke -->
+    <path d="M-100,-370 h200 v40 c0,14 -6,28 -16,38 -28,28 -44,66 -44,106 v190 c0,95 -77,172 -172,172 -24,0 -48,-5 -69,-14"
+          fill="none" stroke="url(#glass)" stroke-width="12" opacity="0.9" filter="url(#soft)"/>
+  </g>
+
+  <!-- Neck ring -->
+  <g transform="translate(600, 340)">
+    <ellipse cx="0" cy="0" rx="120" ry="25" fill="#D8DCE7" opacity="0.7" filter="url(#soft)"/>
+    <ellipse cx="0" cy="10" rx="115" ry="22" fill="#FDFDFE" opacity="0.8" filter="url(#soft)"/>
+  </g>
+
+  <!-- Smoke (layered blobs) -->
+  <g transform="translate(760, 210)" fill="url(#smoke)" filter="url(#wash)" opacity="0.9">
+    <circle cx="-40" cy="40" r="80"/>
+    <circle cx="-130" cy="80" r="70"/>
+    <circle cx="-60" cy="120" r="90"/>
+    <circle cx="10" cy="100" r="60"/>
+    <circle cx="-10" cy="0" r="55"/>
+    <circle cx="-100" cy="-10" r="45"/>
+  </g>
+
+  <!-- Extra soft glow around flask -->
+  <circle cx="740" cy="720" r="320" fill="#F2EDE4" opacity="0.5" filter="url(#soft)"/>
+</svg>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import '../static/css/about.css';
 import mission from '../static/img/transmutation.png';
 
 import laura from '../static/img/laura.png';
@@ -7,11 +8,11 @@ import network from '../static/img/network.png';
 import agents from '../static/img/agents.png';
 import uspArt from '../static/img/usp.png';
 
-export default function Lab() {
+export default function About() {
   const people = [
-    { name: 'Laura Findley',   img: laura,   blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { name: 'James Naish',     img: james,   blurb: 'Product strategist and design lead for rapid validation.' },
-    { name: 'Our Network',     img: network, blurb: 'ML engineer turning prototypes into reliable systems.' },
+    { name: 'Laura Findley',   img: laura,   blurb: 'A true polyglot, Laura brings a vast array of experience and insight to the team. Educated in Oxford, Kings and York, she has practised as a barrister, grown multiple businesses from start up to exit, raised VC funding, built global brands and developed products. Oh, and of course she can also build neural networks, design algorithms and architect enterprise level software solutions. Because she couldn’t be a technology alchemist without that.' },
+    { name: 'James Naish',     img: james,   blurb: 'James is a true technologist. He operates at the forefront of technology but has a rare ability to switch from detail-focus to big picture thinking. He completed a PhD in AI back in 2012, before AI was a buzzword. He has scaled and managed software engineering teams of 50+, architected enterprise level software solutions, developed technology that led to 5x value buyouts, raised VC funding, worked in pretty much every industry from startups to big fintech firms and solved preciously ‘impossible’ AI problems.' },
+    { name: 'Our Network',     img: network, blurb: 'Over the decades we have worked with hundreds of software professionals from developer, to analysts, testers to data scientists. We know who are the best in the business and we have them on speed dial. So we can get them, fast.' },
     { name: 'AI Tools & Agents', img: agents, blurb: 'ML engineer turning prototypes into reliable systems.' },
   ];
 
@@ -56,7 +57,7 @@ export default function Lab() {
 
   return (
     <section className="lab-page" aria-labelledby="lab-title">
-      <div className="container lab-grid lab-grid--three">
+      <div className="container lab-grid">
         <h1 id="lab-title" className="section-title lab-heading">Our Lab</h1>
 
         {/* LEFT — Mission */}
@@ -64,10 +65,13 @@ export default function Lab() {
           <div className="media-frame">
             <img src={mission} alt="The Volanto lab mission illustration" />
           </div>
-          <h2 className="subhead">Our Mission</h2>
+          <h2 className="subhead">Our Company</h2>
           <p className="mission-lede">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh
-            euismod tincidunt ut laoreet est dolore magna aliquam erat.
+            We are a boutique team of heavy hitting, A+ personalities, driven to take any challenge and find the silver lining.
+            Oh wait, I mean the gold of course.
+          </p>
+          <p className="mission-lede">
+            Because we are a boutique team you will always have access to the best people. And you will always be our priority.
           </p>
         </div>
 
@@ -102,22 +106,6 @@ export default function Lab() {
               />
             ))}
           </div>
-        </aside>
-
-        <div className="v-divider" aria-hidden="true" />
-
-        {/* RIGHT — USP */}
-        <aside className="usp-card lab-col" aria-labelledby="usp-title">
-          <div className="media-frame">
-            <img className="usp-art" src={uspArt} alt="Our USP illustration" />
-          </div>
-          <h2 id="usp-title" className="subhead">Our USP</h2>
-          <ul className="usp-list">
-            <li>We’ve walked in your shoes</li>
-            <li>We don't tolerate mediocrity. We're driven by excellence.</li>
-            <li>We question every assumption and validate every idea.</li>
-            <li>World-class legal, tech, and entrepreneurial expertise</li>
-          </ul>
         </aside>
       </div>
     </section>

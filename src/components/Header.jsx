@@ -39,8 +39,8 @@ export default function Header() {
           className={`primary${open ? ' is-open' : ''}`}
           aria-label="Primary"
         >
-          <NavLink to="/lab" className={navCls} onClick={close}>Our Lab</NavLink>
-          <NavLink to="/expertise" className={navCls} onClick={close}>Our Expertise</NavLink>
+          <NavLink to="/about" className={navCls} onClick={close}>Who We Are</NavLink>
+          <NavLink to="/what" className={navCls} onClick={close}>What We Do</NavLink>
           <NavLink to="/craft" className={navCls} onClick={close}>Our Craft</NavLink>
           <NavLink to="/domains" className={navCls} onClick={close}>Our Domains</NavLink>
           <NavLink to="/connect" className={ctaCls} onClick={close}>Connect</NavLink>
