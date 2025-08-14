@@ -39,9 +39,9 @@ export default function Header() {
           className={`primary${open ? ' is-open' : ''}`}
           aria-label="Primary"
         >
+          <NavLink to="/about" className={navCls} onClick={close}>Who We Are</NavLink>
           <NavLink to="/what" className={navCls} onClick={close}>What We Do</NavLink>
           <NavLink to="/who" className={navCls} onClick={close}>Who We're For</NavLink>
-          <NavLink to="/about" className={navCls} onClick={close}>Who We Are</NavLink>
           <NavLink to="/why" className={navCls} onClick={close}>Why Volanto?</NavLink>
           <NavLink to="/connect" className={ctaCls} onClick={close}>Connect</NavLink>
         </nav>

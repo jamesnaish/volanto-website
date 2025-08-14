@@ -1,0 +1,139 @@
+/* ─────────────────────────────────────────────
+   WHY PAGE — “Choose with clarity” (v2)
+   Uses global tokens: --ink --muted --paper --accent-grad
+   ───────────────────────────────────────────── */
+
+:root{
+  /* one knob to make both images the same size */
+  --why-art-size: clamp(260px, 28vw, 340px);
+}
+
+.why-page{
+  padding: clamp(22px, 3vh, 36px) 0 clamp(28px, 6vh, 64px);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Centered heading + lede */
+.why-head{ 
+  text-align: center; 
+  margin-bottom: clamp(16px, 3vh, 28px); 
+}
+.why-h1{
+  margin: 0 0 6px 0;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: 1.05;
+  font-size: clamp(28px, 5.2vw, 56px);
+  color: var(--ink);
+}
+.why-lede{
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+/* Two columns; equal-height cards */
+.why-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 3.2vw, 28px);
+  align-items: stretch;               /* cards stretch to equal height */
+}
+
+/* Card: border-only (no white box), same height via flex */
+.why-card{
+  border: 1px solid rgba(17,24,39,.12);
+  background: transparent;
+  border-radius: 16px;
+  padding: clamp(14px, 2vw, 18px);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Title with gradient underline */
+.why-title{
+  position: relative;
+  margin: 4px 0 12px;
+  font-weight: 800;
+  font-size: clamp(18px, 2.1vw, 24px);
+  color: var(--ink);
+}
+.why-title::after{
+  content:"";
+  display:block;
+  width: clamp(120px, 30%, 160px);
+  height: 4px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: var(--accent-grad);
+  opacity: .85;
+}
+
+/* Artwork: identical size in both cards */
+.why-artwrap{
+  display:flex; justify-content:center; align-items:center;
+  padding: clamp(8px, 1.4vw, 12px) 0 clamp(10px, 1.8vw, 14px);
+}
+.why-art{
+  width: var(--why-art-size);
+  height: auto;
+  max-width: 100%;
+  display:block;
+  filter: saturate(.95) contrast(1.03);
+  user-select:none; pointer-events:none;
+}
+
+/* Points — border-only, no white fill */
+.why-points{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  /* keeps bullets in the same visual column height */
+  margin-top: auto;
+}
+.why-point{
+  position: relative;
+  padding: 14px 14px 14px 36px;
+  border-radius: 12px;
+  background: transparent;                       /* ← no white box */
+  border: 1px solid rgba(17,24,39,.10);
+  box-shadow: none;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+.why-point::before{
+  content:"";
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  width:10px; height:10px; border-radius:50%;
+  background: var(--accent-grad);
+  box-shadow:
+    0 0 0 4px rgba(169,203,227,.14),
+    0 0 0 1px rgba(255,255,255,.6) inset;
+}
+
+/* “Not a fit” tone keeps the dot subtle but still visible */
+.why-point.con{ color: #111827; }
+.why-point.con::before{
+  background: linear-gradient(90deg, #c7cbd4, #a9aeb8);
+  box-shadow:
+    0 0 0 4px rgba(156,163,175,.15),
+    0 0 0 1px rgba(255,255,255,.6) inset;
+}
+
+/* Small screens: stack + allow page scroll */
+@media (max-width: 980px){
+  /* ensure this page scrolls even if a global layout locks the viewport */
+  html, body { height:auto; min-height:100%; overflow:auto; }
+
+  .why-grid{ grid-template-columns: 1fr; }
+  .why-card{ min-height: 0; }                  /* remove equal-height constraint */
+  .why-art{ width: clamp(220px, 60vw, 340px); }/* keep images balanced on mobile */
+  .why-page{ padding-bottom: clamp(32px, 8vh, 72px); }
+}
+.why-point:hover { background: rgba(255,255,255,.35); }
