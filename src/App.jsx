@@ -4,21 +4,21 @@ import Layout from './layout/Layout.jsx';
 
 const Home       = lazy(() => import('./pages/Home.jsx'));
 const About        = lazy(() => import('./pages/About.jsx'));
-const Craft      = lazy(() => import('./pages/Craft.jsx'));
-const Domains    = lazy(() => import('./pages/Domains.jsx'));
-const Expertise = lazy(() => import('./pages/Expertise.jsx'));
-const Connect    = lazy(() => import('./pages/Connect.jsx'));
+const What      = lazy(() => import('./pages/What.jsx'));
+const Who    = lazy(() => import('./pages/Who.jsx'));
+const Why = lazy(() => import('./pages/Why.jsx'));
+const Contact    = lazy(() => import('./pages/Contact.jsx'));
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="what" element={<What />} />
+        <Route path="who" element={<Who />} />
         <Route path="about" element={<About />} />
-        <Route path="expertise" element={<Expertise />} />
-        <Route path="craft" element={<Craft />} />
-        <Route path="domains" element={<Domains />} />
-        <Route path="connect" element={<Connect />} />
+        <Route path="why" element={<Why />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
