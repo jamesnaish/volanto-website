@@ -9,7 +9,9 @@ export default function Home() {
         {/* LEFT: headline + lede + CTA */}
         <div className="v-copy">
           <h1 id="v-hero-title" className="v-title">
-            Volanto are the technology
+            Volanto:
+            <br className="br-md" />
+            the technology
             <br className="br-md" />
             alchemists
           </h1>

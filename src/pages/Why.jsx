@@ -1,8 +1,8 @@
 import React from "react";
 import '../static/css/why.css';
 // Drop your artwork in /static/img (PNG/SVG both fine)
-import whyTree from "../static/img/why-path.png";
-import notFitRoad from "../static/img/why-not-path.png";
+import whyTree from "../static/img/with-volanto.png";
+import notFitRoad from "../static/img/without-volanto.png";
 
 function Point({ children, tone = "pro" }) {
   return <li className={`why-point ${tone}`}>{children}</li>;

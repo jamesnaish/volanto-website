@@ -7,7 +7,7 @@ import machine from "../static/img/transmutation-machine.png";
 
 // Step icons (PNG)
 import distilPng from "../static/img/distillation.png";
-import illuminatePng from "../static/img/illumination.png";
+import illuminatePng from "../static/img/lighthouse.png";
 import synthesisePng from "../static/img/synthesis.png";
 import transformPng from "../static/img/transformation.png";
 

@@ -1,0 +1,66 @@
+/* What We Do — brand-consistent hero section
+   (uses your existing tokens: --paper, --ink, --muted, --accent-grad, --pad) */
+
+.wwd {
+  color: var(--ink);
+  /* Remove padding-block as it's redundant with individual paddings */
+  min-height: calc(100vh - var(--header-h, 0px));
+  display: flex;  /* Change from grid to flex */
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;    /* Use a smaller fixed gap */
+  padding-top: clamp(12px, 2.4vh, 20px);
+  padding-bottom: clamp(20px, 3.6vh, 32px);
+}
+
+/* Centered, chunky H1 (same weight/scale you’ve been using) */
+.wwd-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  font-size: clamp(32px, 6vw, 56px);
+}
+
+/* Hero sits nicely in the middle row */
+.wwd-hero {
+  margin: 1rem 0;  /* Add some specific margin */
+  display: flex;
+  justify-content: center;
+}
+
+/* Watercolor hero sizing matches your other pages */
+.wwd-art {
+  display:block;
+  width: min(560px, 46vw);   /* was min(780px, 62vw) */
+  max-height: 38vh;          /* was ~52vh */
+  height: auto;
+  object-fit: contain;
+  filter: saturate(.9) contrast(1.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Lede paragraph — centered, comfortable line length */
+.wwd-lede {
+  max-width: 62ch;
+  text-align: left !important;          /* was center */
+  color: var(--muted);
+  font-size: clamp(15px, 1.9vw, 18px);
+  line-height: 1.6;
+  margin: 0.5rem auto;
+}
+
+/* Responsive: allow natural page scroll on smaller screens */
+@media (max-width: 980px) {
+  .wwd {
+    min-height: auto;
+    grid-template-rows: auto auto auto;
+    gap: clamp(14px, 3vh, 20px);
+  }
+  .wwd-art{
+    width: min(520px, 80vw);
+    max-height: 34vh;
+  }
+}

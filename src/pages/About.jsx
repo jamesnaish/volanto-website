@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import '../static/css/about.css';
-import mission from '../static/img/transmutation.png';
+import mission from '../static/img/team.png';
 
 import laura from '../static/img/laura.png';
 import james from '../static/img/james.png';
@@ -64,7 +64,7 @@ export default function About() {
           <div className="media-frame">
             <img src={mission} alt="The Volanto lab mission illustration" />
           </div>
-          <h2 className="subhead">Our Company</h2>
+          <h2 className="subhead">Our Culture</h2>
           <p className="mission-lede">
             We are a boutique team of heavy hitting, A+ personalities, driven to take any challenge and find the silver lining.
             Oh wait, I mean the gold of course.
