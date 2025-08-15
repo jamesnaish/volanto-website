@@ -41,7 +41,7 @@ const STEPS = [
 export default function How() {
   return (
     <section className="how container" role="main">
-      <h1 className="how-title">How we work</h1>
+      <h1 className="section-title">How we work</h1>
 
       <div className="how-grid">
         {/* LEFT: steps */}

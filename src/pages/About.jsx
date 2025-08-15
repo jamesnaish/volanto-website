@@ -57,7 +57,7 @@ export default function About() {
   return (
     <section className="lab-page" aria-labelledby="lab-title">
       <div className="container lab-grid">
-        <h1 id="lab-title" className="section-title lab-heading">Who We Are</h1>
+        <h1 id="lab-title" className="section-title">Who We Are</h1>
 
         {/* LEFT — Mission */}
         <div className="lab-people lab-col">

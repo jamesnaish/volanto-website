@@ -13,10 +13,6 @@
   align-items: flex-start;
   padding: 0 clamp(20px, 4vw, 60px);  /* add horizontal padding */
 }
-.lab-heading{
-  grid-column: 1 / -1; text-align:center;
-  margin: 0 0 clamp(12px, 2vw, 18px);
-}
 
 /* left column: team art + mission text (centered) */
 .lab-people{ min-width:0; text-align:center; }

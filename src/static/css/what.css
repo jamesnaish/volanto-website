@@ -13,16 +13,6 @@
   padding-bottom: clamp(20px, 3.6vh, 32px);
 }
 
-/* Centered, chunky H1 (same weight/scale you’ve been using) */
-.wwd-title {
-  margin: 0;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.05;
-  font-size: clamp(32px, 6vw, 56px);
-}
-
 /* Hero sits nicely in the middle row */
 .wwd-hero {
   margin: 1rem 0;  /* Add some specific margin */
@@ -45,7 +35,7 @@
 /* Lede paragraph — centered, comfortable line length */
 .wwd-lede {
   max-width: 62ch;
-  text-align: left !important;          /* was center */
+  text-align: center;          /* was center */
   color: var(--muted);
   font-size: clamp(15px, 1.9vw, 18px);
   line-height: 1.6;

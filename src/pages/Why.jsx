@@ -13,10 +13,7 @@ export default function Why() {
     <section className="why-page" aria-labelledby="why-title" role="main">
       <div className="container">
         <header className="why-head">
-          <h1>Choose with clarity</h1>
-          <p className="why-lede">
-            Where Volanto excels — and where we’re not the right fit.
-          </p>
+          <h1 className="section-title">Why We're Different</h1>
         </header>
 
         <div className="why-grid">

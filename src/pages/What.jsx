@@ -2,12 +2,12 @@ import React from "react";
 import "../static/css/what.css";
 
 // reuse an existing brand hero (swap if you prefer)
-import heroFlask from "../static/img/ai-agents.png";
+import heroFlask from "../static/img/agentic-service.png";
 
 export default function WhatWeDo() {
   return (
     <section className="wwd container" role="main">
-      <h1 className="wwd-title">What We Do</h1>
+      <h1 className="section-title">What We Do</h1>
 
       <figure className="wwd-hero">
         <img
